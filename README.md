@@ -106,16 +106,29 @@ The application uses MongoDB to store user and portfolio data. Make sure MongoDB
 Users can enable two-factor authentication (2FA) during registration. They will need to use an authenticator app (such as Google Authenticator or Authy) to generate one-time passwords (TOTP).
 During login, users with 2FA enabled will be prompted to enter the one-time password from their authenticator app.
 Project Structure:
-/water-portfolio
-│
-├── /models          # Mongoose models (User, Portfolio)
-├── /public          # Static files (images, styles)
-│   ├── /images      # Portfolio images (e.g., `wat.jpg`)
-│   └── /styles.css  # Global styles
-├── /views           # EJS templates
-│   ├── index.ejs    # Template for the homepage
-│   └── register.ejs # Template for the registration page
-└── server.js        # Main Express server
+node_login/
+├── models/
+│   ├── Portfolio.js
+│   └── User.js
+├── node_modules/
+├── public/
+│   ├── styles.css
+│   ├── wat.jpg
+│   ├── wat1.png
+│   └── wat2.jpg
+├── views/
+│   ├── 2fa-setup.ejs
+│   ├── 2fa.ejs
+│   ├── dashboard.ejs
+│   ├── index.ejs
+│   ├── login.ejs
+│   └── register.ejs
+├── .env
+├── mongoConfig.js
+├── package-lock.json
+├── package.json
+└── passportConfig.js
+
 API
 1. /chart (GET)
 Description: Fetches data for rendering a pie chart about the distribution of water on Earth.
